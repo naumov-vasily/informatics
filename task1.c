@@ -20,11 +20,11 @@ void dectobin(int dec, char* bin);
 
 int main(int argc, char** argv)
 {
-    char bin[33];
-    bin[32] = '\0';
-    memset(bin, ' ', 32);
-    dectobin(12, bin);
-    puts(bin);
+    //char bin[33];
+    //bin[32] = '\0';
+    //memset(bin, ' ', 32);
+    //dectobin(12, bin);
+    //puts(bin);
     treeptr head = NULL;
     for(;;)
     {
