@@ -191,7 +191,9 @@ void find_number(int dec, treeptr* first_element)
         else
         {
             found = 1;
-            printf("%d | %s\n", curr->dec, curr->bin);
+            printf("%d |", curr->dec);
+            print_without_spaces(curr->bin);
+            putchar('\n');
         }
     }
     if(!found)
