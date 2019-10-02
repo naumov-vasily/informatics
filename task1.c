@@ -17,7 +17,7 @@ void insert_element(int dec, treeptr* first_element);
 void print_ordered(treeptr head, int order_asc);
 void find_number(int dec, treeptr* first_element);
 void dectobin(int dec, char* bin);
-
+void print_without_spaces(char* bin);
 int main(int argc, char** argv)
 {
     //char bin[33];
@@ -118,7 +118,9 @@ void print_ordered(treeptr head, int order_asc)
     {
         if(head->left != NULL)
             print_ordered(head->left, order_asc);
-        printf("%d | %s\n", head->dec, head->bin);
+        printf("%d |", head->dec);
+        print_without_spaces(head->bin);
+        putchar('\n');
         if(head->right != NULL)
             print_ordered(head->right, order_asc);
     }
@@ -194,4 +196,10 @@ void find_number(int dec, treeptr* first_element)
     }
     if(!found)
         puts("The table doesn't have this number!");
+}
+void print_without_spaces(char* bin)
+{
+    for(int i = 0; i != 33; ++i)
+        if(bin[i] != ' ')
+            putchar(bin[i]);
 }
